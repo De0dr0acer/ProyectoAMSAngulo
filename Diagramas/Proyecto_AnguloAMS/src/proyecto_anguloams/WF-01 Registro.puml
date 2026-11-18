@@ -1,0 +1,15 @@
+@startsalt
+{
+  **AprendeIA Ética - Registro**
+  --
+  Nombre completo | "                              "
+  Correo electrónico | "                              "
+  Contraseña | "****                          "
+  Confirmar contraseña | "****                          "
+  [X] Acepto el uso responsable de la IA
+  .
+  [  Crear cuenta  ] | [  Cancelar  ]
+  --
+  ¿Ya tienes cuenta? <u>Inicia sesión</u>
+}
+@endsalt

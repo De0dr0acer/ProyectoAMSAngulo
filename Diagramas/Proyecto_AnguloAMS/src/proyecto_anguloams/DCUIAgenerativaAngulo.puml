@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor "Usuario" as Usuario
+actor "Administrador" as Administrador
+
+rectangle "AprendeIA Etica"{
+usecase "Registrarse" as UC1
+usecase "Iniciar y Cerrar Secion de forma segura" as UC2
+usecase "Visualizar y Actualizar Datos de Perfil" as UC3
+usecase "Consultar Avance" as UC4
+usecase "Consultar Cursos" as UC5
+}
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+Usuario --> UC5
+
+UC3 ..> UC2 : <<include>>
+UC4 ..> UC3 : <<include>>
+
+Administrador--> UC2
+
+
+@enduml

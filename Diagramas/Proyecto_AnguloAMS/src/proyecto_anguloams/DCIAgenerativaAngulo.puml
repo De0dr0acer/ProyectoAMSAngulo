@@ -1,0 +1,52 @@
+@startuml
+
+class Usuario{
+-idUsuario: int
+-nombreCompleto: String
+-correo: String
+-CContraseña: String 
+-fecharegistro: Date
++registrar():boolean
++ioiniciarSesion():boolean
++cerrarSesion():void
+}
+
+class PerfilUsuario{
+-idPerfil: int
+-biografia: String
+-institucion: String
++obtenerDatos():boolean
++actualizarDatos():boolean
+}
+
+class ProgresoAcademico{
+-idProgreso: int
+-porcentake:  float
+-cursosCompletados:int
++CalcularPorcentajeGlobal():float
++ActualizarAvance():void
++():boolean
+}
+
+class CursoLeccion{
+-idLeccion: int
+-titulo:String
+-categoria:String
+-contenido:String
++Visualizarcontenido():String
+}
+
+class Normativa{
+-idNormativa: int
+-titulo:String
+-resumen:String
+-palabraClave:String
++buscarNormativa():String
+}
+Usuario "1" o-- "1" PerfilUsuario : posee >
+Usuario "1" o-- "1" ProgresoAcademico : genera >
+Usuario "1" --> "0..*" CursoLeccion : cursa >
+Usuario "1" --> "0..*" Normativa : consulta (en <= 2 clics) >
+
+
+@enduml

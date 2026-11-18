@@ -1,0 +1,14 @@
+@startsalt
+{
+  { [Inicio] | [Cursos] | [Normatividad] | **[Mi perfil]** | [Mi progreso] }
+  --
+  **Mi perfil**
+  Nombre completo | "Saúl Angulo Posadas           "
+  Correo electrónico | "usuario@correo.com            "
+  Institución | "                              "
+  Biografía | "                              "
+  Contraseña nueva | "                              "
+  .
+  [ Guardar cambios ] | [ Cancelar ]
+}
+@endsalt

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AprendeIA Ética - Dashboard</title>
+  <style>
+    /* Reset básico */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #1a202c;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Ventana del Dashboard */
+    .dashboard-window {
+      display: flex;
+      width: 100%;
+      max-width: 1100px;
+      height: 650px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 1. Sidebar (Navegación Lateral) */
+    aside {
+      width: 220px;
+      background-color: #1e293b;
+      color: #94a3b8;
+      padding: 20px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .sidebar-active-item {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sidebar-item {
+      padding: 10px 15px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .sidebar-item:hover {
+      background-color: #334155;
+      color: white;
+    }
+
+    .dot-icon {
+      width: 14px;
+      height: 14px;
+      border-radius: 3px;
+      border: 2px solid currentColor;
+    }
+
+    /* Área Principal */
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: #f8fafc;
+      overflow-y: auto;
+    }
+
+    /* 2. Top Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .header-bar {
+      width: 120px;
+      height: 10px;
+      background-color: #cbd5e1;
+      border-radius: 5px;
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    /* Panel Body */
+    .dashboard-body {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      flex: 1;
+    }
+
+    /* 3. Tarjetas KPI (4 columnas) */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .kpi-card {
+      padding: 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .kpi-blue { background-color: #e0f2fe; }
+    .kpi-green { background-color: #dcfce7; }
+    .kpi-purple { background-color: #f3e8ff; }
+    .kpi-orange { background-color: #ffedd5; }
+
+    .kpi-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    .kpi-blue .kpi-circle { background-color: #0284c7; }
+    .kpi-green .kpi-circle { background-color: #16a34a; }
+    .kpi-purple .kpi-circle { background-color: #9333ea; }
+    .kpi-orange .kpi-circle { background-color: #ea580c; }
+
+    .kpi-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      width: 100%;
+    }
+
+    .line {
+      height: 6px;
+      background-color: rgba(0, 0, 0, 0.15);
+      border-radius: 3px;
+    }
+    .line-short { width: 50%; }
+    .line-full { width: 90%; }
+
+    /* 4. Sección central de gráficos y datos */
+    .data-section {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      flex: 1;
+    }
+
+    .chart-box {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .chart-placeholder {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(180deg, rgba(59,130,246,0.2) 0%, rgba(59,130,246,0) 100%);
+      border-top: 3px solid #3b82f6;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .list-box {
+      background-color: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .list-title {
+      font-weight: bold;
+      color: #334155;
+      font-size: 14px;
+    }
+
+    .list-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .list-dot {
+      width: 12px;
+      height: 12px;
+      background-color: #cbd5e1;
+      border-radius: 50%;
+    }
+
+    .list-lines {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* 5. Footer */
+    footer {
+      background-color: #e2e8f0;
+      text-align: center;
+      padding: 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      color: #475569;
+      margin-top: auto;
+    }
+
+    /* Adaptación responsiva */
+    @media (max-width: 850px) {
+      .dashboard-window { flex-direction: column; height: auto; }
+      aside { width: 100%; }
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .data-section { grid-template-columns: 1fr; }
+    }
+  
+.form-card{max-width:420px;margin:30px auto;background:#fff;border:1px solid #e0e0e0;border-radius:8px;padding:24px}
+.form-card h2{margin-bottom:14px;color:#1e293b}
+.form-card label{display:block;font-size:.85rem;font-weight:bold;margin-top:10px}
+.form-card input[type=text],.form-card input[type=email],.form-card input[type=password],.form-card textarea{width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:6px;margin-top:4px;font-size:.9rem}
+.btn{display:inline-block;background:#2563eb;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-weight:bold;margin-top:16px;cursor:pointer;text-decoration:none}
+.btn.o{background:#fff;color:#2563eb;border:2px solid #2563eb}
+.small{font-size:.85rem;color:#64748b;margin-top:12px}
+.bar{height:12px;background:#e2e8f0;border-radius:8px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:#10b981}
+.ok{background:#ecfdf5;border-left:5px solid #10b981;padding:14px;border-radius:6px}.no{background:#fef2f2;border-left:5px solid #ef4444;padding:14px;border-radius:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.tag{background:#dbeafe;color:#1e40af;font-size:.75rem;padding:3px 10px;border-radius:12px;display:inline-block;margin:2px}
+p{line-height:1.5;margin:6px 0}
+
+</style>
+</head>
+<body>
+<div class="dashboard-window"><aside><div class="sidebar-active-item"><div class="dot-icon"></div><span>Dashboard</span></div><div class="sidebar-item"><div class="dot-icon"></div><span>Mis cursos</span></div><div class="sidebar-item"><div class="dot-icon"></div><span>Normatividad</span></div><div class="sidebar-item"><div class="dot-icon"></div><span>Mi progreso</span></div><div class="sidebar-item"><div class="dot-icon"></div><span>Mi perfil</span></div><div class="sidebar-item"><div class="dot-icon"></div><span>Cerrar sesión</span></div></aside>
+<div class="main-content"><header><div class="header-bar" style="width:60%;height:auto;padding:8px 12px;background:#f1f5f9;border-radius:8px"><span style="font-size:.85rem;color:#64748b">🔎 Buscar norma o guía rápida…</span></div><div class="user-avatar">S</div></header>
+<div class="dashboard-body"><h2 style="margin-bottom:12px">Bienvenido, Saúl</h2>
+<div class="kpi-grid">
+<div class="kpi-card kpi-blue"><div class="kpi-circle"></div><div class="kpi-lines"><b>45%</b><span style="font-size:.75rem">Avance global</span></div></div>
+<div class="kpi-card kpi-green"><div class="kpi-circle"></div><div class="kpi-lines"><b>1 / 3</b><span style="font-size:.75rem">Cursos completados</span></div></div>
+<div class="kpi-card kpi-purple"><div class="kpi-circle"></div><div class="kpi-lines"><b>3 / 5</b><span style="font-size:.75rem">Lecciones</span></div></div>
+<div class="kpi-card kpi-orange"><div class="kpi-circle"></div><div class="kpi-lines"><b>4</b><span style="font-size:.75rem">Normas consultadas</span></div></div></div>
+<div class="data-section"><div class="chart-box"><div style="width:100%"><b>Avance por curso</b><p style="font-size:.8rem">Ética en IA</p><div class="bar"><i style="width:100%"></i></div><p style="font-size:.8rem">Privacidad</p><div class="bar"><i style="width:50%"></i></div><p style="font-size:.8rem">Citación</p><div class="bar"><i style="width:0"></i></div></div></div>
+<div class="list-box"><span class="list-title">Guía rápida</span><p>✅ Anonimiza tus datos</p><p>✅ Cita contenido de IA</p><p>❌ No pegues credenciales</p></div></div>
+<footer>AprendeIA Ética</footer></div></div></div>
+</body>
+</html>

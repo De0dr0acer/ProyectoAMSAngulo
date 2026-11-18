@@ -1,0 +1,42 @@
+@startuml
+
+
+title Diagrama de Actividades - AprendeIA Ética
+
+start
+:Usuario accede a la plataforma\n(Interfaz responsiva - RNF-03);
+
+if (¿Tiene cuenta registrada?) then (No)
+  :Ingresa datos de registro;
+  :El sistema encripta contraseña;
+  :Guarda usuario en la Base de Datos;
+else (Sí)
+endif
+
+:Ingresa credenciales de acceso;
+:El sistema valida credenciales;
+
+if (¿Credenciales válidas?) then (No)
+  :Mostrar mensaje de error de acceso;
+  stop
+else (Sí)
+  :Iniciar Sesión y generar sesión activa;
+  :Mostrar Panel Principal (Dashboard);
+endif
+
+fork
+  :Gestionar Perfil ;
+  :Visualizar y actualizar datos básicos;
+fork again
+  :Consultar Progreso ;
+  :Consultar porcentaje global de avance en cursos;
+fork again
+  :Consultar Normatividad y Lecciones;
+  :Realizar búsqueda rápida ;
+end fork
+
+:Solicitar Cierre de Sesión;
+:El sistema destruye la sesión activa;
+
+stop
+@enduml

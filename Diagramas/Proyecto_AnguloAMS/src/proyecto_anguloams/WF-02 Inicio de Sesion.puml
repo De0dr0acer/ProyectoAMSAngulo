@@ -1,0 +1,13 @@
+@startsalt
+{
+  **AprendeIA Ética - Iniciar sesión**
+  --
+  Correo electrónico | "                              "
+  Contraseña | "****                          "
+  [ ] Recordarme
+  .
+  [  Iniciar sesión  ]
+  --
+  <u>¿Olvidaste tu contraseña?</u> | <u>Registrarme</u>
+}
+@endsalt

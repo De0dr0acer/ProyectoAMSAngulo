@@ -1,0 +1,19 @@
+@startsalt
+{+
+  { [Inicio] | [Cursos] | [Normatividad] | [Mi perfil] | [Mi progreso] | [Cerrar sesión] }
+  --
+  **Bienvenido, Usuario**
+  {+
+    Buscar norma o guía rápida: | "                              " | [ Buscar ]
+  }
+  {+
+    **Mi avance global** | **Accesos rápidos**
+    [#####.....] 45% | [ Qué sí / Qué no hacer ]
+    . | [   Continuar lección   ]
+  }
+  **Cursos recomendados**
+  {+
+    Ética en IA | Privacidad | Citación
+  }
+}
+@endsalt
