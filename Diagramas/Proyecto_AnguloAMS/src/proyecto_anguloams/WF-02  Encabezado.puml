@@ -1,0 +1,20 @@
+@startuml
+salt
+{+
+  <b>⚡ ETIA_interactiva</b> | [Inicio] [Normatividad] [Recursos] [Certificación] | [ Alumno ▾]
+  ===
+  [RUTA FORMATIVA · 4 MÓDULOS]
+  <b>Domina la IA Generativa con Ética</b>
+  Aprende buenas prácticas de prompting, normatividad en 2 clics y certifícate con mínimo 85/100.
+  [====|------] Avance actual: 50% (2 de 4 módulos aprobados)
+  ---
+  <b>Módulos de Aprendizaje (25% c/u)</b>
+  {
+    [  1. Tips y Prácticas\n✅ Completado ] | [  2. Reglas y Ética\n✅ Completado ] | [ ? 3. Apuntes y Prompts\nPendiente ] | [ 🎓 4. Examen Final\nMín. 85/100 ]
+  }
+  Tips y Prácticas  | Redacción de prompts efectivos (Rol-Tarea-Formato) y protección de datos personales.
+  Reglas y Ética    | Derechos de autor, propiedad intelectual y uso responsable en la escuela o trabajo.
+  Apuntes y Prompts | Plantillas estructuradas listas para copiar y resúmenes ejecutivos descargables en PDF.
+  Examen Final      | Cuestionarios interactivos de evaluación y validación de casos prácticos (Mín. 85/100).
+}
+@enduml

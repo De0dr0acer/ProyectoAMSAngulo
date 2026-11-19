@@ -1,0 +1,17 @@
+@startuml
+salt
+{+
+  <b>Cuestionario de Ética y Buenas Prácticas (Mínimo: 85/100)</b>
+  1. ¿Qué información NUNCA debes ingresar en un prompt público de IA Generativa?
+  ( ) Temas generales de estudio o programación
+  (X) Datos personales, contraseñas o información confidencial
+  2. ¿Qué debes hacer si la IA genera una cita bibliográfica o dato estadístico?
+  (X) Verificarlo en fuentes reales para evitar alucinaciones
+  ( ) Copiarlo directamente sin revisar
+  [ Cerrar ] [ Enviar y Calificar ]
+  ===
+  <b>️ Certificación Oficial</b>
+  Certificado en Uso Ético y Efectivo de IA Generativa
+  Folio Registrado en BD: ETIA-2026-UACM-001 | [ 🎖️ Descargar Certificado Oficial ]
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+salt
+{+
+  <b>Recursos de Estudio y Evaluación</b>
+  ---
+  [Plantilla Prompt] Estructura Rol - Tarea - Contexto - Formato | [ Copiar Prompt]
+  [Guía PDF]       Manual de Ética y Normatividad en IA        | [ Descargar PDF]
+  [Evaluación]     Test Integrador Módulo 4 (Mín. 85/100)     | [ Presentar Examen]
+}
+@enduml

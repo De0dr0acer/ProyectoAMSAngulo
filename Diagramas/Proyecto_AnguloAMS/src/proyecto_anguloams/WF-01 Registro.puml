@@ -1,15 +1,13 @@
-@startsalt
-{
-  **AprendeIA Ética - Registro**
-  --
-  Nombre completo | "                              "
-  Correo electrónico | "                              "
-  Contraseña | "****                          "
-  Confirmar contraseña | "****                          "
-  [X] Acepto el uso responsable de la IA
-  .
-  [  Crear cuenta  ] | [  Cancelar  ]
-  --
-  ¿Ya tienes cuenta? <u>Inicia sesión</u>
+@startuml
+salt
+{+
+  <b>ETIA_interactiva</b>
+  Plataforma de Aprendizaje y Ética en IA Generativa
+  ===
+  <b>Iniciar Sesión</b>
+  Correo Electrónico | "alumno@uacm.edu.mx   "
+  Contraseña         | "********           "
+  [ Ingresar a la Plataforma ]
+  ¿Aún no tienes cuenta? <u>Regístrate aquí</u>
 }
-@endsalt
+@enduml

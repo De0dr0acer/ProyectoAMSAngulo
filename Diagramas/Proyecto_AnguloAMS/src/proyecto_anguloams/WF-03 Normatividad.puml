@@ -1,0 +1,19 @@
+@startuml
+salt
+{+
+  <b>Normatividad y Guía Rápida (Consulta Inmediata)</b>
+  Buscar norma o palabra clave: | "privacidad, citas, plagio...   "
+  ---
+  {
+    <b>🟢 Qué SÍ hacer</b>
+    * Anonimizar datos: nombres reales, matrículas o correos
+    * Citar el uso de IA en trabajos académicos
+    * Verificar fuentes: citas y datos estadísticos
+  } | {
+    <b> Qué NO hacer</b>
+    * No pegar credenciales, contraseñas o tokens
+    * No entregar sin revisar (evitar plagio)
+    * No asumir verdad absoluta sin validar sesgos
+  }
+}
+@enduml
